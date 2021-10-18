@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_nav"
+    app:startDestination="@id/playListScreen">
+
+    <fragment
+        android:id="@+id/mainScreen"
+        android:name="uz.gita.musicplayeruz.ui.screen.MainScreen"
+        android:label="MainScreen" >
+        <action
+            android:id="@+id/action_mainScreen_to_playScreen"
+            app:destination="@id/playScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/playScreen"
+        android:name="uz.gita.musicplayeruz.ui.screen.PlayScreen"
+        android:label="screen_play"
+        tools:layout="@layout/screen_play" />
+    <fragment
+        android:id="@+id/playListScreen"
+        android:name="uz.gita.musicplayeruz.ui.screen.PlayListScreen"
+        android:label="screen_play_list"
+        tools:layout="@layout/screen_play_list" >
+        <action
+            android:id="@+id/action_playListScreen_to_playScreen"
+            app:destination="@id/playScreen" />
+    </fragment>
+</navigation>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:background="#D192FA"
+    android:layout_height="match_parent"
+    tools:context=".ui.screen.PlayListScreen">
+    <FrameLayout
+        android:id="@+id/flFragmentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            app:lottie_autoPlay="false"
+            android:visibility="invisible"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/speaker" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="end"
+            android:visibility="invisible"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/speaker" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:fontFamily="@font/poppins_black"
+            android:text="Music"
+            android:textColor="@color/white"
+            android:textSize="35dp" />
+
+    </FrameLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/playList"
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toBottomOf="@id/flFragmentContainer"
+        app:layout_constraintBottom_toTopOf="@id/ivCurSongImage"
+        android:layout_height="0dp"/>
+    <ImageView
+        android:id="@+id/ivCurSongImage"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/vpSong"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/ivPlayPause"
+        app:layout_constraintStart_toEndOf="@+id/ivCurSongImage" />
+
+    <ImageView
+        android:id="@+id/ivPlayPause"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:src="@drawable/ic_play"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
