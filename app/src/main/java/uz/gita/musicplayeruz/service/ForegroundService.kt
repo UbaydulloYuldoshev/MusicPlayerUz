@@ -85,6 +85,15 @@ class ForegroundService : Service(){
         val command = intent?.extras?.getSerializable("data") as? ActionEnum
         data = intent?.extras?.getSerializable("music") as? MusicData
 
+        when(intent?.action){
+            "STOP_PLAYING" -> {
+                _mediaPlayer?.pause()
+            }
+            else -> {
+                _mediaPlayer?.start()
+            }
+        }
+
         if (_mediaPlayer != null) mediaPlayer.stop()
         _mediaPlayer = MediaPlayer.create(this, Uri.fromFile(File(data?.data)))  // Uri
         doneCommand(command)
