@@ -7,7 +7,6 @@ import uz.gita.musicplayeruz.data.MusicData
 
 object EventBus {
     val eventBusLiveData = MutableLiveData<ActionEnum>()
-    var eventSeekBar = 54000
     val eventFinishBusLiveData = SingleLiveEvent<ActionEnum>()
 
     lateinit var  currentMusic : MusicData
