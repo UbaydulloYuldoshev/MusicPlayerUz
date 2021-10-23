@@ -46,7 +46,6 @@ class ForegroundService : Service(){
 
     private fun createRemoteView(): RemoteViews {
         val remoteView = RemoteViews(this.packageName, R.layout.notification_layout)
-        remoteView.setOnClickPendingIntent(R.id.playButton, createPendingIntent(ActionEnum.PLAY))
         remoteView.setOnClickPendingIntent(R.id.pauseButton, createPendingIntent(ActionEnum.PAUSE))
         remoteView.setOnClickPendingIntent(R.id.nextButton, createPendingIntent(ActionEnum.NEXT))
         remoteView.setOnClickPendingIntent(R.id.closeButton, createPendingIntent(ActionEnum.CLOSE))

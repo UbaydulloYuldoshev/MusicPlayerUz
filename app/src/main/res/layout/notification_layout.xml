@@ -2,20 +2,13 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:weightSum="8"
+    android:background="#1B1625"
     android:layout_height="match_parent">
     <ImageView
         android:id="@+id/prevButton"
         android:layout_width="0dp"
         android:src="@drawable/ic_skip_previous"
         android:layout_weight="1"
-        android:layout_height="40dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginRight="4dp"/>
-    <ImageView
-        android:id="@+id/playButton"
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:src="@drawable/ic_play"
         android:layout_height="40dp"
         android:layout_marginLeft="4dp"
         android:layout_marginRight="4dp"/>

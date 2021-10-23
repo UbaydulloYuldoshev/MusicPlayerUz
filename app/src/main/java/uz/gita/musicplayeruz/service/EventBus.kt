@@ -1,12 +1,21 @@
 package uz.gita.musicplayeruz.service
 
+import android.media.MediaPlayer
 import androidx.lifecycle.MutableLiveData
+import uz.gita.musicplayeruz.SingleLiveEvent
 import uz.gita.musicplayeruz.data.MusicData
 
 object EventBus {
     val eventBusLiveData = MutableLiveData<ActionEnum>()
-    val eventFinishBusLiveData = MutableLiveData<ActionEnum>()
-    val eventStartActivityBusLiveData = MutableLiveData<ActionEnum>()
+    var eventSeekBar = 54000
+    val eventFinishBusLiveData = SingleLiveEvent<ActionEnum>()
 
-    val setSelectListener : ((MusicData) -> Unit)? = null
+    lateinit var  currentMusic : MusicData
+    lateinit var  media : MediaPlayer
+
+    var currentPosition  = 0
+    var position = 0
+    lateinit var data: MusicData
+    var isPlaying = true
+
 }

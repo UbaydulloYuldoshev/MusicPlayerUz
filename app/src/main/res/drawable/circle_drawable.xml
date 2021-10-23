@@ -3,9 +3,16 @@
 
     <item>
         <shape android:shape="oval">
-            <solid android:color="#AA4CDC"/>
-            <corners android:radius="100dp" />
+            <corners android:radius="37.5dp"/>
+            <stroke android:color="@color/white" android:width="6dp"/>
+
         </shape>
     </item>
 
 </selector>
+
+
+    <!--<shape android:shape="oval">-->
+    <!--<solid android:color="#AA4CDC"/>-->
+    <!--<corners android:radius="100dp" />-->
+    <!--</shape>-->

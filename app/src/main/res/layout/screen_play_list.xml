@@ -10,14 +10,14 @@
     <FrameLayout
         android:id="@+id/flFragmentContainer"
         android:layout_width="match_parent"
-        android:layout_height="?actionBarSize"
+        android:layout_height="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <com.airbnb.lottie.LottieAnimationView
             android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_height="wrap_content"
             app:lottie_autoPlay="false"
             android:visibility="invisible"
             app:lottie_loop="true"
@@ -25,7 +25,7 @@
 
         <com.airbnb.lottie.LottieAnimationView
             android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:visibility="invisible"
             app:lottie_autoPlay="true"
@@ -39,7 +39,7 @@
             android:fontFamily="@font/poppins_black"
             android:text="Music"
             android:textColor="@color/white"
-            android:textSize="35dp" />
+            android:textSize="24sp" />
 
     </FrameLayout>
     <androidx.recyclerview.widget.RecyclerView
@@ -56,8 +56,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/vpSong"
+    <TextView
+        android:id="@+id/tvSong"
         android:layout_width="0dp"
         android:layout_height="56dp"
         app:layout_constraintBottom_toBottomOf="parent"

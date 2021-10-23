@@ -14,7 +14,7 @@ import uz.gita.musicplayeruz.extensions.songArt
 
 class PlayListAdapter constructor(var cursor : Cursor?=null): RecyclerView.Adapter<PlayListAdapter.PlayListViewHolder>() {
     private var eventMusicListener : ((MusicData) -> Unit)?=null
-    private var eventListener:((MusicData)->Unit)? = null
+    private var eventListener:((Int,MusicData)->Unit)? = null
 
     inner class PlayListViewHolder(view : View)  : RecyclerView.ViewHolder(view) {
         private val imageMusic = view.findViewById<ImageView>(R.id.imageMusic)
@@ -26,7 +26,7 @@ class PlayListAdapter constructor(var cursor : Cursor?=null): RecyclerView.Adapt
                 eventMusicListener?.invoke(getMusicDataByPos(absoluteAdapterPosition))
             }
             itemView.setOnClickListener {
-                eventListener?.invoke(getMusicDataByPos(absoluteAdapterPosition))
+                eventListener?.invoke(absoluteAdapterPosition,getMusicDataByPos(absoluteAdapterPosition))
             }
         }
 
@@ -66,7 +66,7 @@ class PlayListAdapter constructor(var cursor : Cursor?=null): RecyclerView.Adapt
     fun setEventMusicListener (block : (MusicData) -> Unit) {
         eventMusicListener = block
     }
-    fun setEventListener (block : (MusicData) -> Unit) {
+    fun setEventListener (block : (Int,MusicData) -> Unit) {
         eventListener = block
     }
 }
