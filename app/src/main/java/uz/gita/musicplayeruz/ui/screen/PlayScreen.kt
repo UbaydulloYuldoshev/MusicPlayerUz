@@ -30,6 +30,8 @@ class PlayScreen : Fragment(R.layout.screen_play) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val intent = Intent(requireContext(), ForegroundService::class.java)
 
+
+
         viewBinding.seekBar.setOnSeekBarChangeListener(
             object : SeekBar.OnSeekBarChangeListener{
                 override fun onProgressChanged(p0: SeekBar?, p1: Int, p2: Boolean) {}
@@ -46,7 +48,7 @@ class PlayScreen : Fragment(R.layout.screen_play) {
 
 
         arguments?.let {
-            data = it.getSerializable("music") as MusicData
+            data = it.getSerializable("media") as MusicData
             viewBinding.tvSongName.text = data.title
             viewBinding.seekBar.progress = data.duration?.toInt()!!
         }
